@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>胎龄检测系统登录界面</title>
+  </head>
+  <body>
+    <div class="login-panel">
+      <h2>胎龄检测系统</h2>
+      <form method="get" target="_blank">
+        <select id="identity">
+          <option value="doctor">医生</option>
+          <option value="patient">病人</option>
+        </select>
+
+        <div class="inputBox">
+          <input type="text" name="usr" required="" id="usr" />
+          <label>user</label>
+        </div>
+
+        <div class="inputBox">
+          <input type="password" name="pwd" required="" id="pwd" />
+          <label>password</label>
+        </div>
+
+        <input type="submit" name="" value="登录" onclick="return _select()" />
+      </form>
+    </div>
+  </body>
+</html>
+
+<script type="text/javascript">
+  function getValue(id) {
+    return document.getElementById(id).value;
+  }
+
+  function _select() {
+    if (getValue("identity") == "doctor") {
+      if (getValue("usr") == "xy" && getValue("pwd") == "12345") {
+        window.location.href = "./doctor.html";
+        return true;
+      } else {
+        alert("用户名或密码错误!");
+        return false;
+      }
+    } else {
+      if (getValue("usr") == "tyq" && getValue("pwd") == "54321") {
+        window.location.href = "./patient.html";
+        return true;
+      } else {
+        alert("用户名或密码错误!");
+        return false;
+      }
+    }
+  }
+</script>
+
+<style>
+  body {
+    /* 外边距 */
+    margin: 0;
+    /* 内边距 */
+    padding: 0;
+    /* 字体 */
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+    /* 边框加粗 */
+    font-weight: bolder;
+    /* 引入背景图片 */
+    background: url(https://s1.ax1x.com/2022/12/17/zHK0J0.jpg);
+    /* 水平居中 */
+    text-align: center;
+    /* 把背景图片放大到合适的尺寸 */
+    background-size: cover;
+  }
+
+  .login-panel {
+    /* 绝对定位 */
+    position: absolute;
+    /* 距离顶部50%距离 */
+    top: 50%;
+    /* 距离左侧50%距离 */
+    left: 50%;
+    /* 让box水平垂直居中 */
+    transform: translate(-50%, -50%);
+    /* 宽度 */
+    width: 600px;
+    /* 内边距 */
+    padding: 100px;
+    /* 背景颜色 */
+    background-color: rgba(10, 9, 6, 0.425);
+    /* 盒子模型 */
+    box-sizing: border-box;
+    /* 阴影部分 */
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+    /* 边框变圆 */
+    border-radius: 10px;
+  }
+
+  .login-panel h2 {
+    /* 外边距 */
+    margin: 0 0 30px;
+    /* 内边距 */
+    padding: 0;
+    /* 文本颜色 */
+    color: rgba(247, 221, 27, 0.8);
+    /* 文本居中 */
+    text-align: center;
+  }
+
+  .login-panel .inputBox {
+    /* 相对定位 */
+    position: relative;
+  }
+
+  .login-panel .inputBox input {
+    width: 100%;
+    padding: 10px 0;
+    /* 字体大小 */
+    font-size: 10px;
+    color: rgb(9, 255, 0);
+    /* 外边距距离底部 */
+    margin-bottom: 30px;
+    /* 边框消失 */
+    border: none;
+    /* 定义底部边框并设置颜色 */
+    border-bottom: 1px solid rgb(0, 0, 0);
+    /* 点击时的框 */
+    outline: none;
+    /* 背景透明 */
+    background: transparent;
+  }
+
+  .login-panel .inputBox label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    font-size: 16px;
+    /* 字体样式正常展示 */
+    font-style: normal;
+    color: rgb(41, 202, 255);
+    /* 可以看到这个元素,但是点击不了,触发的是下级元素 */
+    pointer-events: none;
+    /* 过度 会把加载步骤变成0.5s内完成 */
+    transition: 0.5s;
+    text-align: center;
+  }
+
+  .login-panel .inputBox input:focus ~ label,
+  .login-panel .inputBox input:valid ~ label {
+    top: -18px;
+    left: 0;
+    color: lawngreen;
+    font-size: 12px;
+  }
+
+  .login-panel input[type="submit"] {
+    /* 背景透明 */
+    background: transparent;
+    /* 边框消失 */
+    border: none;
+    /* 点击边框消失 */
+    outline: none;
+    color: antiquewhite;
+    /* 字体 */
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+    font-size: 16px;
+    background: rgb(60, 59, 59);
+    padding: 10px 20px;
+    /* 鼠标放上变选中 */
+    cursor: pointer;
+    border-radius: 5px;
+    /* 加粗 */
+    font-weight: bolder;
+  }
+  select {
+    position: absolute;
+    top: 140px;
+    right: 100px;
+    border: none;
+    background: rgba(55, 53, 53, 0.8);
+    color: antiquewhite;
+    border-radius: 2px;
+    outline: none;
+  }
+
+  select:focus {
+    outline: none;
+  }
+
+  p {
+    color: antiquewhite;
+  }
+</style>
